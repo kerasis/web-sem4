@@ -128,3 +128,59 @@ foreach ($array as $value) {
     }
 }
 echo "<br>Сумма первых $Count элементов массива превышает 10.<br>";
+
+// task 7 functions
+function printStringReturnNumber($inputString) {
+    echo $inputString;
+    return rand(1, 100);
+}
+$muNum = printStringReturnNumber("aboba");
+echo "<br> результат функции $myNum <br>";
+
+//task 8
+
+function increaseEnthusiasm($inputString){
+    $inputString .= "!";
+    return $inputString;
+}
+echo "increaseEnthusiasm: ", increaseEnthusiasm("aaaaaa"), "<br>";
+
+function repeatThreeTimes($str)
+{
+    $str .= $str.= $str;
+    return $str;
+}
+echo "repeatThreeTimes: ", repeatThreeTimes("chipi"), "<br>";
+
+function cut($str, $l = 10) {
+    $substr = '';
+    for ($i = 0; $i < $l; $i++) {
+        $substr .= $str[$i];
+    }
+    return $substr;
+}
+echo "cut: ", cut('12345',3);
+
+function printArrayRecursive($array, $index = 0) {
+    if ($index < count($array)) {
+        echo $array[$index], " ";
+        printArrayRecursive($array, $index + 1);
+    }
+}
+echo "<br> рекурсивный вывод массива: ";
+printArrayRecursive($array);
+
+function sumDigits($number) {
+    while ($number > 9) {
+        $numberString = (string)$number;
+        $sum = 0;
+        for ($i = 0; $i < strlen($numberString); $i++) {
+            $sum += (int)$numberString[$i];
+        }
+        $number = $sum;
+    }
+    return $number;
+}
+
+echo "<br> сумма цифр: ", sumDigits(1234567), "<br>";
+

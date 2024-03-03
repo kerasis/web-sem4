@@ -39,5 +39,92 @@ echo "<br>Kоличество дней уходящих на 1 яп: $daysPerLan
 //task 4
 echo "восемь во 2й степени: ";
 echo 8**2;
+echo "<br>";
 
+//task 5
+$myNum = 18;
+$answer = $myNum;
+$answer += 2;
+$answer *= 2;
+$answer -= 2;
+$answer /= 2;
+$answer -= $myNum;
+echo "умножение деление и всякое такое: $answer <br>";
 
+//task 6 математические функции
+$a=10;
+$b=3;
+echo "a % b = ";
+echo $a%$b;
+echo "<br>";
+
+if ($a % $b == 0) {
+    echo "а делится на b: ";
+    echo $a%$b;
+} else {
+    echo "а не делится на b остаток :";
+    echo $a%$b;
+}
+
+// степень и корень
+$st = pow(2,10);
+echo "<br>2 в 10 степени : $st <br>";
+echo "квадратный корень из 245: ";
+echo sqrt(245);
+echo "<br>";
+
+$arr = [4, 2, 5, 19, 13, 0, 10];
+$curValue = 0;
+foreach ($arr as $it){
+    $curValue += pow($it, 2);
+}
+echo "кoрень суммы квадратов массива: ";
+echo sqrt($curValue);
+echo "<br>";
+
+// функции округления
+echo "квадратный корень из 379: ";
+echo round(sqrt(379), 0), " ",round(sqrt(379), 1), " ", round(sqrt(379), 2), "<br>";
+$mas587 = ['floor' => floor(sqrt(587)), 'ceil' => ceil(sqrt(587))];
+echo "sqrt 587 floor: ", $mas587['floor'] , " ceil: ", $mas587['ceil'], "<br>";
+
+// min max
+$arrMinMax = [4, -2, 5, 19, -130, 0, 10];
+echo "min: ", min($arrMinMax), " max: ", max($arrMinMax), "<br>";
+
+//random
+echo "random num: " , rand(1, 100);
+$randomArray = [];
+for ($i = 0; $i < 10; $i++) {
+    $randomArray[$i] = rand(1, 100);
+}
+echo "<br>Массив из 10 случайных чисел: ";
+print_r($randomArray);
+
+//abs
+$a = 5;
+$b = 8;
+echo "<br>Модуль разности $a и $b: ",  abs($a - $b), "<br>";
+
+$num = 30;
+$divisors = [];
+for ($i = 1; $i <= $num; $i++) {
+    if ($num % $i == 0){
+        $divisors[] = $i;
+    }
+}
+
+echo "Делители $num: ";
+print_r($divisors);
+
+$array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+$sum = 0;
+$Count = 0;
+foreach ($array as $value) {
+    $sum += $value;
+    $Count++;
+    if ($sum > 10) {
+        break;
+    }
+}
+echo "<br>Сумма первых $Count элементов массива превышает 10.<br>";

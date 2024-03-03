@@ -311,3 +311,26 @@ for ($i = 0; $i < 20; $i++){
     $msg .= 'x';
     echo $msg, '<br>';
 }
+
+//task 12
+$arr = [1, 2, 3,5 ,5,6,7,3,45,7,8,8,2,43,5];
+echo "среднее арифметическое: ", array_sum($arr)/count($arr), '<br>';
+echo "Сумма чисел от 1 до 100: ", 100 * (100 + 1) / 2, '<br>';
+
+$numbers = [4, 9, 16];
+// array_map нужен для применения функции к каждому элементу массива
+$result = array_map('sqrt', $numbers);
+print_r($result);
+echo '<br>';
+
+$numbers = range(1, 26);
+$letters = range('a', 'z'); //массив букв английского алфавита
+$result = array_combine($letters, $numbers); //array_combine соединяет массивы
+print_r($result);
+echo '<br>';
+
+$str = '1234567890';
+$numbers = str_split($str, 2); // разбиение строки на подстроки длиной 2
+$numbers = array_map('intval', $numbers); // преодразование строк в числа
+$sum = array_sum($numbers);
+echo "Сумма пар чисел: $sum";

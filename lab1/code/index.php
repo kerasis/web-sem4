@@ -184,3 +184,77 @@ function sumDigits($number) {
 
 echo "<br> сумма цифр: ", sumDigits(1234567), "<br>";
 
+// task 9 array
+
+$n = 5;
+$arr = [];
+for ($i = 1; $i <= $n; $i++) {
+    $cur = '';
+    for ($j = 0; $j < $i; $j++) {
+        $cur .= 'x';
+    }
+    $arr[] = $cur;
+}
+print_r($arr);
+echo "<br>";
+function arrayFill($val, $count) {
+    $res = [];
+    for ($i = 0; $i < $count; $i++) {
+        $res[] = $val;
+    }
+    return $res;
+}
+
+$fillarr = arrayFill('p', 7);
+print_r($fillarr);
+echo "<br>";
+
+function sumArr($array) {
+    $sum = 0;
+    foreach ($array as $sub) {
+        foreach ($sub as $value) {
+            $sum += $value;
+        }
+    }
+    return $sum;
+}
+$twoDimArr = [[1, 2, 3], [4, 5], [6]];
+echo "Сумма элементов многомерного массива ", sumArr($twoDimArr), "<br>";
+
+$count = 1;
+$array = [];
+for ($i = 0; $i < 3; $i++) {
+    $subarray = array();
+    for ($j = 0; $j < 3; $j++) {
+        $subarray[] = $count;
+        $count++;
+    }
+    $array[] = $subarray;
+}
+echo "Заполнение массива 3 на 3: ";
+print_r($array);
+echo "<br>";
+
+$array = [2, 5, 3, 9];
+$result = ($array[0] * $array[1]) + ($array[2] * $array[3]);
+echo "умножение и сложение че то там кто то там: $result <br>";
+
+$user = [
+    'name' => 'абоба',
+    'surname' => 'абоб',
+    'patronymic' => 'абобович'
+];
+echo $user['surname'] . ' ' . $user['name'] . ' ' . $user['patronymic'];
+echo "<br>";
+$date = [
+    'year' => date('Y'),
+    'month' => date('m'),
+    'day' => date('d')
+];
+echo $date['year'] . '-' . $date['month'] . '-' . $date['day'];
+echo "<br>";
+
+$arr = ['a', 'b', 'c', 'd', 'e'];
+echo 'количество элементов в этом массиве ', count($arr), '<br>';
+
+echo 'последний элемент- ', $arr[count($arr)-1], ', предпоследний - ', $arr[count($arr)-2],'<br>';

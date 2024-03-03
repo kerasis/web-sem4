@@ -6,10 +6,12 @@ services:
       - "8080:80"
     volumes:
       - ./code:/code
-      - ./site.conf:/ect/nginx/conf.d/site.conf
+      - ./site.conf:/etc/nginx/conf.d/site.conf
+    depends_on:
+      - php_nastushka
     links:
       - php_nastushka
   php_nastushka:
-    image: php:8.3-fpm
+    image: php:8.3.3-fpm
     volumes:
       - ./code:/code

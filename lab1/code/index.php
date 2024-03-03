@@ -29,5 +29,15 @@ $thisMonth = 1089.98;
 echo "<br> Разница в расходах: ";
 echo $lastMonth - $thisMonth;
 
+//task 3
+$numLanguages = 4;
+$months = 11;
+$days = $months * 16;
+$daysPerLanguage = $days / $numLanguages;
+echo "<br>Kоличество дней уходящих на 1 яп: $daysPerLanguage <br>";
+
+//task 4
+echo "восемь во 2й степени: ";
+echo 8**2;
 
 

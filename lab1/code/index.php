@@ -258,3 +258,56 @@ $arr = ['a', 'b', 'c', 'd', 'e'];
 echo 'количество элементов в этом массиве ', count($arr), '<br>';
 
 echo 'последний элемент- ', $arr[count($arr)-1], ', предпоследний - ', $arr[count($arr)-2],'<br>';
+
+//task 10
+
+function sumOr10($num1, $num2) {
+    $sum = $num1 + $num2;
+    return $sum > 10;
+}
+$result = sumOr10(8,1);
+if ($result) {
+    echo "Сумма чисел больше 10.<br>";
+} else {
+    echo "Сумма чисел не больше 10.<br>";
+}
+
+function equal($num1, $num2) {
+    return $num1 == $num2;
+}
+$result = equal(8,1);
+if ($result) {
+    echo "равны<br>";
+} else {
+    echo "не равны<br>";
+}
+$test = 0;
+echo ($test == 0) ? 'верно<br>' : ''; //тернарный оператор
+
+
+$age = rand(1, 110);
+if ($age < 10 || $age > 99) {
+    echo 'Число меньше 10 или больше 99.';
+} else {
+    $sum = array_sum(str_split($age)); //встроенные функции которые разделяют строку на элементы, другая считает сумму
+    if ($sum <= 9) {
+        echo 'Сумма цифр однозначна: ' . $sum, '<br>';
+    } else {
+        echo 'Сумма цифр двузначна: ' . $sum, '<br>';
+    }
+}
+
+$arr = [1, 2, 3]; // Замените на нужный массив
+if (count($arr) == 3) {
+    $sum = array_sum($arr);
+    echo "Сумма элементов: $sum", '<br>';
+} else {
+    echo "Массив не содержит 3 элемента", '<br>';
+}
+
+//task 11 циклы
+$msg = '';
+for ($i = 0; $i < 20; $i++){
+    $msg .= 'x';
+    echo $msg, '<br>';
+}

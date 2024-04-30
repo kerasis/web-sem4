@@ -1,0 +1,12 @@
+{
+    "name": "kzv/lab4",
+    "description": "lab4",
+    "type": "project",
+    "require": {
+        "google/apiclient": "2.15.0",
+        "curl/curl": "^1.1",
+        "ext-curl": "*"
+    },
+    "license": "none",
+    "minimum-stability": "dev"
+}

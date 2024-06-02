@@ -1,13 +1,11 @@
 <?php
-
 function redirectToHome(): void
 {
     header('Location: index.php');
-
     exit();
 }
 
-if (false === isset($_POST['email'], $_POST['category'], $_POST['title'], $_POST['description'])) {
+if (!isset($_POST['email'], $_POST['category'], $_POST['title'], $_POST['description'])) {
     redirectToHome();
 }
 
@@ -16,10 +14,22 @@ $title = $_POST['title'];
 $email = $_POST['email'];
 $desc = $_POST['description'];
 
-$filePath = "categories/{$category}/{$title}.txt";
+$mysqli = new mysqli("localhost", "root", "helloworld", "web");
 
-if (false === file_put_contents($filePath, "$email\n$desc")) {
+if ($mysqli->connect_error) {
+    die("Connection failed: " . $mysqli->connect_error);
+}
+
+$stmt = $mysqli->prepare("INSERT INTO ad (email, title, description, category) VALUES (?, ?, ?, ?)");
+$stmt->bind_param("ssss", $email, $title, $desc, $category);
+
+if ($stmt->execute()) {
+    $stmt->close();
+    $mysqli->close();
+    redirectToHome();
+} else {
+    $stmt->close();
+    $mysqli->close();
     throw new Exception('Something went wrong.');
 }
-chmod($filePath, 0777);
-redirectToHome();
+?>
